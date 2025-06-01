@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Subtitle Control</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 220px;
+        height: 220px;
+        font-family: sans-serif;
+        background-color: #f9fafb;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 20px;
+        color: #111827;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: #374151;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 56px;
+        height: 28px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 9999px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: #4caf50;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(28px);
+      }
+
+      .footer {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 4px;
+      }
+
+      .footer a {
+        text-decoration: none;
+        color: #4b5563;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>RapSub</h3>
+    <p>Realtime Subtitle from English to Bahasa</p>
+    <label>
+      <div class="switch">
+        <input type="checkbox" id="toggle-subtitle" />
+        <span class="slider"></span>
+      </div>
+    </label>
+    <div class="footer">
+      <a href="https://github.com/rapsign" target="_blank"
+        ><span id="year"></span> &#169; RapSign</a
+      >
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
